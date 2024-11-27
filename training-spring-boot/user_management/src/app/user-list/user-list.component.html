@@ -1,0 +1,100 @@
+<h2>Kullanıcı Listesi</h2>
+
+<!-- Arama Kutusu -->
+<div>
+  <label for="searchQuery">Kullanıcı Ara:</label>
+  <input
+    id="searchQuery"
+    type="text"
+    [(ngModel)]="searchQuery"
+    (input)="filterUsers()"
+    placeholder="İsim, e-posta veya soyisim ara"
+  />
+</div>
+
+<!-- Kullanıcı Listesi Tablosu -->
+<table border="1">
+  <thead>
+    <tr>
+      <th>Seç</th>
+      <th>ID</th>
+      <th>İsim</th>
+      <th>E-posta</th>
+      <th>Soyisim</th>
+      <th>İşlemler</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of filteredUsers">
+      <td>
+        <input
+          type="checkbox"
+          [checked]="selectedUsers.includes(user.id)"
+          (change)="toggleSelection(user.id)"
+        />
+      </td>
+      <td>{{ user.id }}</td>
+      <td *ngIf="editingUser.id !== user.id">{{ user.name }}</td>
+      <td *ngIf="editingUser.id !== user.id">{{ user.email }}</td>
+      <td *ngIf="editingUser.id !== user.id">{{ user.surname }}</td>
+      <td *ngIf="editingUser.id !== user.id">
+        <button (click)="editUser(user)">Düzenle</button>
+        <button (click)="deleteUser(user.id)">Sil</button>
+		<button [routerLink]="['/users/details', user.id]">Detaylar</button>
+      </td>
+
+      <!-- Düzenleme Modu -->
+      <td *ngIf="editingUser.id === user.id">
+        <input [(ngModel)]="editingUser.name" placeholder="Yeni isim" />
+        <input [(ngModel)]="editingUser.email" placeholder="Yeni e-posta" />
+        <input [(ngModel)]="editingUser.surname" placeholder="Yeni soyisim" />
+        <button (click)="updateUser()">Kaydet</button>
+        <button
+          (click)="editingUser = { id: 0, name: '', email: '', surname: '' }"
+        >
+          İptal
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Toplu Silme İşlemi -->
+<div *ngIf="selectedUsers.length > 0" style="margin-top: 10px;">
+  <button (click)="deleteSelectedUsers()">Seçili Kullanıcıları Sil</button>
+</div>
+
+<!-- Yeni Kullanıcı Ekle -->
+<h3>Yeni Kullanıcı Ekle</h3>
+<div>
+  <label for="name">İsim:</label>
+  <input
+    id="name"
+    type="text"
+    [(ngModel)]="newUser.name"
+    placeholder="İsim girin"
+  />
+  <label for="email">E-posta:</label>
+  <input
+    id="email"
+    type="email"
+    [(ngModel)]="newUser.email"
+    placeholder="E-posta girin"
+  />
+  <label for="surname">Soyisim:</label>
+  <input
+    id="surname"
+    type="text"
+    [(ngModel)]="newUser.surname"
+    placeholder="Soyisim girin"
+  />
+  <button (click)="addUser()">Ekle</button>
+</div>
+<div class="actions">
+  
+  <button class="logout-btn" (click)="logout()">Çıkış Yap</button>
+
+  
+  <button class="export-btn" (click)="exportToCSV()">Kullanıcıları Dışa Aktar</button>
+</div>
+

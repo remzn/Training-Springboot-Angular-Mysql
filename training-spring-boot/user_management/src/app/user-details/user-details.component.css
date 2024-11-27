@@ -1,0 +1,90 @@
+/* Genel Konteyner */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Yükleniyor Mesajı */
+.is-loading {
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  background-color: #f0f8ff;
+  border-radius: 8px;
+  margin-top: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.is-loading::before {
+  content: '⏳'; /* Yükleniyor simgesi */
+  margin-right: 10px;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Başlık */
+h2 {
+  font-size: 28px;
+  text-align: center;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+/* Kullanıcı Bilgileri */
+p {
+  font-size: 18px;
+  color: #444;
+  margin: 12px 0;
+  line-height: 1.6;
+}
+
+strong {
+  font-weight: 600;
+  color: #3498db;
+  margin-right: 10px;
+}
+
+/* Kayıt Tarihi ve Kayıt Süresi */
+p span {
+  font-weight: bold;
+  color: #2ecc71;
+}
+
+/* Kullanıcı Bulunamadı */
+.no-user-message {
+  font-size: 20px;
+  text-align: center;
+  color: #e74c3c;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fbe9e7;
+  border-radius: 8px;
+  border: 1px solid #e74c3c;
+}
+.back-btn {
+  background-color: #007bff; /* Mavi renk */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #0056b3;
+}

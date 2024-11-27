@@ -1,0 +1,15 @@
+<div *ngIf="isLoading" class="is-loading">Kullanıcı bilgileri yükleniyor...</div>
+
+<div *ngIf="!isLoading && user" class="container">
+  <h2>Kullanıcı Detayları</h2>
+  <p><strong>İsim:</strong> {{ user.name }}</p>
+  <p><strong>E-posta:</strong> {{ user.email }}</p>
+  <p><strong>Soyisim:</strong> {{ user.surname }}</p>
+  <p *ngIf="user.registerDate"><strong>Kayıt Tarihi:</strong> {{ user.registerDate | date }}</p>
+  <p *ngIf="user.registerDate"><strong>Kayıt Süresi:</strong> {{ user.registerDate | timeDifference }}</p>
+  <button class="back-btn" (click)="goBackToUserList()">Kullanıcı Listesine Geri Dön</button>
+</div>
+
+<div *ngIf="!isLoading && !user" class="no-user-message">
+  <p>Kullanıcı bulunamadı.</p>
+</div>

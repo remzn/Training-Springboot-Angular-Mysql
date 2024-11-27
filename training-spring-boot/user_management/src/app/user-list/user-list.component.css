@@ -1,0 +1,232 @@
+/* Genel Konteyner */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Başlık */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Arama Kutusu */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Tablo */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Seçim kutuları ve İşlem Butonları */
+button {
+  padding: 5px 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+button.btn-danger {
+  background-color: #e74c3c;
+}
+
+button.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+button.btn-warning {
+  background-color: #f39c12;
+}
+
+button.btn-warning:hover {
+  background-color: #e67e22;
+}
+
+button.btn-info {
+  background-color: #17a2b8;
+}
+
+button.btn-info:hover {
+  background-color: #138496;
+}
+
+button.btn-success {
+  background-color: #28a745;
+}
+
+button.btn-success:hover {
+  background-color: #218838;
+}
+
+button.btn-secondary {
+  background-color: #6c757d;
+}
+
+button.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Toplu Silme Butonu */
+div[style="margin-top: 10px;"] {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button[type="button"] {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+button[type="button"]:hover {
+  background-color: #c82333;
+}
+
+/* Yeni Kullanıcı Ekleme Formu */
+h3 {
+  margin-top: 30px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button[type="button"]:focus {
+  outline: none;
+}
+
+button[type="button"] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button[type="button"]:hover {
+  background-color: #0056b3;
+}
+
+/* Çıkış Yap Butonu */
+button.logout-btn {
+  background-color: #dc3545; /* Kırmızı renk */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 16px;
+  width: auto;
+  display: inline-block; /* Butonu sola hizalamak için inline-block kullanıyoruz */
+}
+
+button.logout-btn:hover {
+  background-color: #c82333;
+}
+
+button.logout-btn {
+  background-color: #dc3545; /* Kırmızı renk */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: auto;
+  display: inline-block; /* Butonları aynı hizada yapmak için inline-block */
+}
+
+button.logout-btn:hover {
+  background-color: #c82333;
+}
+
+/* Dışa Aktarma Butonu */
+.export-btn {
+  background-color: #4CAF50; /* Yeşil renk */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: auto;
+  display: inline-block; /* Butonları aynı hizada yapmak için inline-block */
+}
+
+.export-btn:hover {
+  background-color: #45a049; /* Buton üzerine gelindiğinde biraz daha koyu yeşil */
+}
+
+/* Sağ Alt Köşe Butonları */
+.fixed-buttons {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Butonlar arasındaki boşluk */
+}
+
+/* Sağ Alt Köşe Butonlarına hizalama */
+.fixed-buttons button {
+  width: 200px; /* Buton boyutunu sabitle */
+}
